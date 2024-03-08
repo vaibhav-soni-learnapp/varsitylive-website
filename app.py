@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 st.title('API Clicks Fetcher')
 
 # Authorization token (hardcoded for demonstration; consider securely managing this)
-auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcwOTgxMzg2NywiZXhwIjoxNzA5OTAwMjY3LCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.klwrXQAJFL2cHYiYkOHqLOhsNH9ta2Hf82DLZhCOQxY'  # Ensure to replace <your_token_here> with your actual token
+auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcwOTkwMTkxNSwiZXhwIjoxNzA5OTg4MzE1LCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.sguV_UiHN-C6VUng5ZG0UhaXlAHzys2tY6iKwBct3RU'  # Ensure to replace <your_token_here> with your actual token
 headers = {'Authorization': auth_token}
 
 # Function to fetch clicks data
