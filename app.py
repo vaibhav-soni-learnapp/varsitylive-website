@@ -28,7 +28,7 @@ else:
 
 
 #-----------------------------------------------------------------------------
-# Date input for fromDate and toDate
+    # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
     toDate = st.date_input("To Date", date.today())
 
