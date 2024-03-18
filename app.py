@@ -27,7 +27,7 @@ else:
     selected_event_name = st.selectbox('Select Event Name', event_names)
 
 
------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
     toDate = st.date_input("To Date", date.today())
@@ -40,7 +40,7 @@ else:
 
 
 
-----------------------------------------------------------------------------
+#----------------------------------------------------------------------------
     
     # Dynamic URLs for the APIs based on selected event name
    # urls = [
