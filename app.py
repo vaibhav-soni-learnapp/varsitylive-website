@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from concurrent.futures import ThreadPoolExecutor
+from datetime import date
 
 # Streamlit application title
 st.title('API Clicks Fetcher')
@@ -26,29 +27,17 @@ else:
     event_names = [event['eventName'] for event in all_clicks_response['items']]
     selected_event_name = st.selectbox('Select Event Name', event_names)
 
-
-#-----------------------------------------------------------------------------
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
     toDate = st.date_input("To Date", date.today())
 
     # Dynamic URLs for the APIs based on selected event name and date range
     urls = [
-        f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}"
+        f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}",
+#        f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}"
     ]
 
-
-
-
-#----------------------------------------------------------------------------
-    
-    # Dynamic URLs for the APIs based on selected event name
-   # urls = [
-   #   f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20",
-   #   f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20"
-   # ]
-
-    # Fetch and display data concurrently for the selected event name
+    # Fetch and display data concurrently for the selected event name and date range
     with ThreadPoolExecutor() as executor:
         results = list(executor.map(fetch_clicks, urls))
 
@@ -58,3 +47,4 @@ else:
             st.error(result)
         else:
             st.json(result)  # Use st.json for better formatting of JSON response
+
