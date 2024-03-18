@@ -28,8 +28,8 @@ else:
 
     # Dynamic URLs for the APIs based on selected event name
     urls = [
-      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-08",
-      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-08"
+      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20",
+      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20"
     ]
 
     # Fetch and display data concurrently for the selected event name
