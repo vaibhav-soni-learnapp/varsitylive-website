@@ -26,10 +26,26 @@ else:
     event_names = [event['eventName'] for event in all_clicks_response['items']]
     selected_event_name = st.selectbox('Select Event Name', event_names)
 
-    # Dynamic URLs for the APIs based on selected event name
+
+-----------------------------------------------------------------------------
+# Date input for fromDate and toDate
+    fromDate = st.date_input("From Date", date.today())
+    toDate = st.date_input("To Date", date.today())
+
+    # Dynamic URLs for the APIs based on selected event name and date range
     urls = [
-      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20",
-      f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20"
+        f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}"
+    ]
+
+
+
+
+----------------------------------------------------------------------------
+    
+    # Dynamic URLs for the APIs based on selected event name
+   # urls = [
+   #   f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20",
+   #   f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate=2024-03-01&toDate=2024-03-20"
     ]
 
     # Fetch and display data concurrently for the selected event name
