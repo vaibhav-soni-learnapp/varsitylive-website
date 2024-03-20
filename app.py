@@ -7,7 +7,7 @@ from datetime import date
 st.title('API Clicks Fetcher')
 
 # Authorization token (hardcoded for demonstration; consider securely managing this)
-auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMDc0NjgxMSwiZXhwIjoxNzEwODMzMjExLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.tOVC2kfFi7z3NGQxd4VLVj9NjK-ifwoVFluGX8z3sHE'  # Ensure to replace <your_token_here> with your actual token
+auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMDkwODcyMSwiZXhwIjoxNzEwOTk1MTIxLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.MRCVPz_-_GUSafJHaAWqT6Kz6QIRkK_1WR_rc3dDtQg'  # Ensure to replace <your_token_here> with your actual token
 headers = {'Authorization': auth_token}
 
 # Function to fetch clicks data
