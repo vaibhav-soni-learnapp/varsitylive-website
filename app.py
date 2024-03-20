@@ -41,10 +41,16 @@ else:
     with ThreadPoolExecutor() as executor:
         results = list(executor.map(fetch_clicks, urls))
 
-    # Display results
-    for result in results:
-        if isinstance(result, str):
-            st.error(result)
-        else:
-            st.json(result)  # Use st.json for better formatting of JSON response
+
+
+# Display trimmed results
+for result in results:
+    if isinstance(result, str):
+        st.error(result)
+    else:
+        trimmed_data = [
+            {"clicks": item["clicks"], "date": item["date"]} for item in result["items"]
+        ]
+        st.json(trimmed_data)  # Display the trimmed data
+
 
