@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 # Streamlit application title
 st.title('API Clicks Fetcher')
