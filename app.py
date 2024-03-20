@@ -42,15 +42,32 @@ else:
         results = list(executor.map(fetch_clicks, urls))
 
 
+ # Display trimmed results and generate chart
+    for result in results:
+        if isinstance(result, str):
+            st.error(result)
+        else:
+            trimmed_data = [
+                {"clicks": item["clicks"], "date": item["date"]} for item in result["items"]
+            ]
+            st.json(trimmed_data)  # Display the trimmed data
 
-# Display trimmed results
-for result in results:
-    if isinstance(result, str):
-        st.error(result)
-    else:
-        trimmed_data = [
-            {"clicks": item["clicks"], "date": item["date"]} for item in result["items"]
-        ]
-        st.json(trimmed_data)  # Display the trimmed data
+            # Extracting dates and clicks for plotting
+            dates = [datetime.strptime(item['date'], "%Y-%m-%dT%H:%M:%S.%fZ").date() for item in trimmed_data]
+            clicks = [item['clicks'] for item in trimmed_data]
 
+            # Creating the plot
+            plt.figure(figsize=(10, 6))
+            plt.plot(dates, clicks, marker='o', linestyle='-', color='b')
 
+            # Formatting the plot
+            plt.title('Clicks over Time')
+            plt.xlabel('Date')
+            plt.ylabel('Number of Clicks')
+            plt.xticks(rotation=45)
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+            plt.gca().xaxis.set_major_locator(mdates.DayLocator())
+            plt.grid(True)
+
+            # Display the plot in the Streamlit app
+            st.pyplot(plt)
