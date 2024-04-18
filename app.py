@@ -9,7 +9,7 @@ import matplotlib.dates as mdates
 st.title('API Clicks Fetcher')
 
 # Authorization token (hardcoded for demonstration; consider securely managing this)
-auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMTUzOTg3NCwiZXhwIjoxNzExNjI2Mjc0LCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.kLD0426faR5bf8QPJsEgahIbBF8s5n0Tf83V4WhUbFA'  # Ensure to replace <your_token_here> with your actual token
+auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMzQzNjQ3MCwiZXhwIjoxNzEzNTIyODcwLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.4vtxVgijcZdtvosMbQFikWxZ03AqH9SjUJtPBD3144o'  # Ensure to replace <your_token_here> with your actual token
 headers = {'Authorization': auth_token}
 
 # Function to fetch clicks data
