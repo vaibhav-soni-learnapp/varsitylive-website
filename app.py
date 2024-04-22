@@ -9,7 +9,8 @@ import matplotlib.dates as mdates
 st.title('API Clicks Fetcher')
 
 # Authorization token (hardcoded for demonstration; consider securely managing this)
-auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMzQzNjQ3MCwiZXhwIjoxNzEzNTIyODcwLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.4vtxVgijcZdtvosMbQFikWxZ03AqH9SjUJtPBD3144o'  # Ensure to replace <your_token_here> with your actual token
+
+auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxMzc5MjIxMywiZXhwIjoxNzEzODc4NjEzLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.C0vns63uKrR3r730xUWuzXoAChewsDPd7gAth005OuY'  # Ensure to replace <your_token_here> with your actual token
 headers = {'Authorization': auth_token}
 
 # Function to fetch clicks data
@@ -36,7 +37,7 @@ else:
     # Dynamic URLs for the APIs based on selected event name and date range
     urls = [
         f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}",
-#        f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}"
+       f"https://oracle.varsitylive.in/admin/web-analytics/click/{selected_event_name}/genericid/range?fromDate={fromDate}&toDate={toDate}"
     ]
 
     # Fetch and display data concurrently for the selected event name and date range
