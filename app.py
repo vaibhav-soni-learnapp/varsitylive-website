@@ -28,7 +28,7 @@ if isinstance(all_clicks_response, str):
     st.error(all_clicks_response)
 else:
     event_names = [event['eventName'] for event in all_clicks_response['items']]
-    selected_event_name = st.selectbox('Select Event Name', event_names)
+    selected_event_name = st.multiselect('Select Event Name', event_names)
 
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
